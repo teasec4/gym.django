@@ -1,0 +1,56 @@
+{% extends 'users/layout.html' %}
+{% block title %} Home {% endblock %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+
+    <div class="container mt-3">
+        <p class="display-6">Начало</p>
+        <p class="lead">
+            На нашем сайте вы можете составлять расписание
+        тренировок.
+        </p>
+        <p class="lead">
+            Писать тренировочный план
+        </p>
+        <p class="lead">Отмечать выполнение.
+            Записывать упражнения, рабочий вес снаряда, количество подходов и повторений.
+    </p>
+        <p class="lead">
+            В вашем профиле будет храниться история всех тренировок. Поэтому вы
+            ничего не потеряете и не забудете.
+        </p>
+
+
+
+    </div>
+
+        <div class="container text-center mt-5">
+            <a class="btn btn-primary" href="{% url 'practice_list' %}">
+                Приступить
+            </a>
+        </div>
+
+
+    {% else %}
+    <div class="container mt-4 text-center">
+        <h1 class="display-6">
+            Добро пожаловать!
+        </h1>
+    </div>
+    <div class="mt-5 mb-5 text-center text-primary lead">
+        <p> Вы не вошли в аккаунт, хотите
+            <a class="" href="{% url 'signup' %}">зарегистрироваться</a>
+            ?
+        </p>
+    </div>
+    <div class="container mt-3 text-center">
+        <a class="btn btn-success btn-lg" href="{% url 'login' %}">
+            Войти
+        </a>
+
+    </div>
+
+    {% endif %}
+
+{% endblock %}

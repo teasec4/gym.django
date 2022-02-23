@@ -1,0 +1,27 @@
+{% extends 'users/layout.html' %}
+{% block title %} Log in {% endblock %}
+
+{% block body %}
+
+    <div class="container mt-5">
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+                <div class="row g-3">
+                    <div class="col-sm-6 mb-3">
+                        <label for="fir" class="form-label">Имя пользователя</label>
+                         <input id="fir" class="form-control" type="text" name="username" placeholder="Имя пользователя">
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                        <label for="sec" class="form-label">Пароль</label>
+                        <input id="sec" class="form-control" type="password" name="password" placeholder="Пароль">
+                    </div>
+                </div>
+                <button class="btn btn-success mt-3" type="submit" >
+                    Войти
+                </button>
+        </form>
+    </div>
+
+
+
+{% endblock %}

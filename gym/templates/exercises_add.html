@@ -1,0 +1,57 @@
+{% extends "users/layout.html" %}
+{% block title %}Add ex{% endblock %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+    <div class="container mt-2 text-center mb-3">
+        <h1 class="display-6">
+            Добавить упражнение:
+        </h1>
+    </div>
+
+    {%  if message%}
+        <div class="mt-2">
+           <p class="display-6 text-danger">
+               {{ message }}
+           </p>
+        </div>
+    {% endif %}
+
+    <div class="container mt-2">
+        <form method="post">
+            {% csrf_token %}
+            <div class="row g-4 align-items-center">
+                <div class="col-sm-5">
+                    <label for="ex" class="form-label">Название упражнения</label>
+                    <input id="ex" type="text" class="form-control" placeholder="Жим лежа" name="title">
+                </div>
+                <div class="col-sm-2">
+                    <label for="wg" class="form-label">Рабочий вес</label>
+                    <input id="wg" type="number" class="form-control" placeholder="50" name="weight_work">
+                </div>
+            </div>
+            <div class="row g-4 align-items-center mt-2">
+                <div class="col-sm-2">
+                    <label for="pod" class="form-label">подходов</label>
+                    <input id="pod" type="number" class="form-control" placeholder="4" name="podhod">
+                </div>
+
+                <div class="col-sm-2">
+                    <label for="pov" class="form-label">повторений</label>
+                    <input id="pov" type="number" class="form-control" placeholder="12" name="povtor">
+                </div>
+            </div>
+
+            <div class="mt-3 d-flex justify-content-between">
+                <button class="btn btn-outline-success " type="submit">
+                    Добавить
+                </button>
+                <a class="btn btn-outline-danger" href="{% url 'practice_detail' practice.id %}">
+                    Отменить
+                </a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
