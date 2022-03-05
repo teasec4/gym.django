@@ -3,62 +3,45 @@
 
 {% block body %}
 
-
-    <p class="mt-2 lead mb-2 mt-md-3 mb-md-3 mt-lg-4 mb-lg-4 text-primary">
-        Мy practice:
-    </p>
+    <div class="text-center mt-3 mb-3">
+        <a class="btn btn-warning shadow" href="{% url 'practice_add' %}">
+            <p class="lead p-0 m-0">
+                Create
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                     class="bi bi-clipboard-plus" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z"/>
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                </svg>
+            </p>
+        </a>
+    </div>
 
     {% for practice in practice_list %}
-        <div class="container shadow m-1 p-2 rounded-3 border d-flex align-items-center justify-content-between" style="background-color: cornflowerblue;">
+        <div class="container shadow m-1 p-2 rounded-3 border d-flex align-items-center justify-content-between"
+             style="background-color: cornflowerblue;">
             <div class="d-flex flex-column p-1">
-                <p class="p-0 m-0 fw-bold">
+                <p class="p-0 m-0 fw-bold fs-2 ">
                     {{ practice.title }}
                 </p>
-                <p class="m-0 p-0 text-light">
+                <p class="m-0 mt-1 p-0 text-light border-top border-light" style="font-size: 13px">
                     {{ practice.date_plan.date }}
                 </p>
             </div>
-            <div class="d-flex flex-column">
+            <div class="">
                 <a class="btn btn-light shadow" href="{% url 'practice_detail' practice.id %}">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                         class="bi bi-journal-plus" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                              d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
-                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
-                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
-                    </svg>
+                    <p class="m-0 p-0 lead">Open train</p>
                 </a>
-                <a class="text-light" style="font-size: 10px" href="{% url 'practice_detail' practice.id %}">
-                    create a plan
-                </a>
-
             </div>
-
         </div>
     {% empty %}
-        <div class="container mt-5">
-            <p class="lead text-primary">
-                You don't have  <a href="{% url 'practice_add' %}">planning</a> train
+        <div class="container mt-5 mb-5 text-center bg-light p-2 shadow rounded">
+            <p class="fs-4 text-primary">
+                You don't have <a href="{% url 'practice_add' %}"><b>planned</b></a> practice
             </p>
         </div>
     {% endfor %}
-
-    <div class="container text-center mt-3">
-        <p>click for: <a href="{% url 'practice_add' %}">
-            create a practice
-        </a>
-        </p>
-        <div class="container rounded p-2 m-auto" style="background-color: cornflowerblue; width:4em;">
-            <a class="btn btn-light shadow" href="{% url 'practice_add' %}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-lg"
-                 viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                      d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-            </svg>
-        </a>
-        </div>
-
-    </div>
 
 
 {% endblock %}
