@@ -5,7 +5,7 @@
     {% if user.is_authenticated %}
 
         <div class="container mt-3">
-            <p class="display-6">Начало</p>
+            <p class="display-6" style="color: cornflowerblue">Начало</p>
             <p class="lead">
                 На нашем сайте вы можете составлять расписание
                 тренировок.
@@ -25,7 +25,7 @@
         </div>
 
         <div class="container text-center mt-2 mb-5">
-            <a class="btn btn-primary" href="{% url 'practice_list' %}">
+            <a class="btn btn-outline-primary" href="{% url 'practice_list' %}">
                 Приступить
             </a>
         </div>
@@ -70,8 +70,8 @@
     {% endif %}
 
 
-    <div class="pt-2 mt-5">
-        <div class="container mt-5">
+    <div class="pt-2 mt-2">
+        <div class="container mt-2">
             <footer class="py-3">
                 <ul class="nav justify-content-center border-bottom border-secondary pb-1">
                     <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-2 text-muted">Начало</a></li>
