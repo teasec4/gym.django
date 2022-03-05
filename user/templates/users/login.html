@@ -3,6 +3,8 @@
 
 {% block body %}
 
+
+
     <div class="container mt-5">
         <form action="{% url 'login' %}" method="post">
             {% csrf_token %}
@@ -16,10 +18,18 @@
                         <input id="sec" class="form-control" type="password" name="password" placeholder="Пароль">
                     </div>
                 </div>
+
                 <button class="btn btn-success mt-3" type="submit" >
                     Войти
                 </button>
         </form>
+
+    </div>
+
+    <div class="container mt-1">
+        {% if message %}
+                <p class="text-danger fs-4">{{ message }}</p>
+            {% endif %}
     </div>
 
 

@@ -5,7 +5,6 @@ from django.urls import reverse
 from .forms import SignUpForm
 
 
-
 def index(request):
     return render(request, 'home.html')
 
@@ -18,13 +17,15 @@ def signup_view(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-            login(request,user)
+            login(request, user)
             return redirect('home')
-    else:
-        form = SignUpForm()
+        else:
+            return render(request, 'users/signup.html', {
+                "form": form
+            })
 
     return render(request, 'users/signup.html', {
-        'form': form
+
     })
 
 
@@ -35,10 +36,12 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse('home'))
+            return HttpResponseRedirect(reverse('practice_list'))
         else:
             return render(request, 'users/login.html', {
-                'message':'Invalid credentials'
+                'message': 'Invalid credentials',
+                "username": username,
+                "password": password,
             })
     return render(request, 'users/login.html')
 

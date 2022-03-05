@@ -4,28 +4,27 @@
 {% block body %}
     {% if user.is_authenticated %}
 
-    <div class="container mt-3">
-        <p class="display-6">Начало</p>
-        <p class="lead">
-            На нашем сайте вы можете составлять расписание
-        тренировок.
-        </p>
-        <p class="lead">
-            Писать тренировочный план
-        </p>
-        <p class="lead">Отмечать выполнение.
-            Записывать упражнения, рабочий вес снаряда, количество подходов и повторений.
-    </p>
-        <p class="lead">
-            В вашем профиле будет храниться история всех тренировок. Поэтому вы
-            ничего не потеряете и не забудете.
-        </p>
+        <div class="container mt-3">
+            <p class="display-6">Начало</p>
+            <p class="lead">
+                На нашем сайте вы можете составлять расписание
+                тренировок.
+            </p>
+            <p class="lead">
+                Писать тренировочный план
+            </p>
+            <p class="lead">Отмечать выполнение.
+                Записывать упражнения, рабочий вес снаряда, количество подходов и повторений.
+            </p>
+            <p class="lead">
+                В вашем профиле будет храниться история всех тренировок. Поэтому вы
+                ничего не потеряете и не забудете.
+            </p>
 
 
+        </div>
 
-    </div>
-
-        <div class="container text-center mt-5">
+        <div class="container text-center mt-2 mb-5">
             <a class="btn btn-primary" href="{% url 'practice_list' %}">
                 Приступить
             </a>
@@ -33,24 +32,59 @@
 
 
     {% else %}
-    <div class="container mt-4 text-center">
-        <h1 class="display-6">
-            Добро пожаловать!
-        </h1>
-    </div>
-    <div class="mt-5 mb-5 text-center text-primary lead">
-        <p> Вы не вошли в аккаунт, хотите
-            <a class="" href="{% url 'signup' %}">зарегистрироваться</a>
-            ?
-        </p>
-    </div>
-    <div class="container mt-3 text-center">
-        <a class="btn btn-success btn-lg" href="{% url 'login' %}">
-            Войти
-        </a>
+        <div class="container mt-3 text-center">
+            <h1 class="display-6">
+                Добро пожаловать!
+            </h1>
+        </div>
+        <div class="mt-4">
+            <p class="lead">
+                На нашем сайте вы можете составлять расписание
+                тренировок.
+            </p>
+            <p class="lead">
+                Писать тренировочный план
+            </p>
+            <p class="lead">Отмечать выполнение.
+                Записывать упражнения, рабочий вес снаряда, количество подходов и повторений.
+            </p>
+            <p class="lead">
+                В вашем профиле будет храниться история всех тренировок. Поэтому вы
+                ничего не потеряете и не забудете.
+            </p>
+        </div>
 
-    </div>
+        <div class="mt-2 text-center text-primary lead">
+            <p> Вы не вошли в аккаунт, хотите
+                <a class="" href="{% url 'signup' %}">зарегистрироваться</a>
+                ?
+            </p>
+        </div>
+        <div class="container mt-3 text-center">
+            <a class="btn btn-success btn-lg" href="{% url 'login' %}">
+                Войти
+            </a>
+
+        </div>
 
     {% endif %}
+
+
+    <div class="pt-2 mt-5">
+        <div class="container mt-5">
+            <footer class="py-3">
+                <ul class="nav justify-content-center border-bottom border-secondary pb-1">
+                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-2 text-muted">Начало</a></li>
+                    <li class="nav-item"><a href="{% url 'practice_list' %}" class="nav-link px-2 text-muted">Мои тренировки</a></li>
+
+                </ul>
+                <div class="text-center">
+                    <p class="text-muted pt-1">&copy; 2022 Ковалев</p>
+
+                </div>
+
+            </footer>
+        </div>
+    </div>
 
 {% endblock %}
