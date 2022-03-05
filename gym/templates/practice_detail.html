@@ -10,7 +10,7 @@
                     <path fill-rule="evenodd"
                           d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                 </svg>
-                назад
+                back
             </a>
         </div>
         <div class="col-8 text-center">
@@ -65,15 +65,16 @@
 
         {% empty %}
             <div class="container text-center">
-                <p class="fs-4 text-primary">У вас еще нет упражнений</p>
+                <p class="fs-4 text-primary">You have not practice yet</p>
             </div>
         {% endfor %}
     </div>
 
 
     <div class="mt-5 text-center">
-        <p class="">Нажмите на кнопку, чтобы <a href="{% url 'add_exercises' practice.id %}"> добавить
-            упражнение</a></p>
+        <p class="">click for <a href="{% url 'add_exercises' practice.id %}">
+            create exercise
+        </a></p>
         <a class="btn btn-success" href="{% url 'add_exercises' practice.id %}">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                  class="bi bi-plus-circle-dotted" viewBox="0 0 16 16">

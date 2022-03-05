@@ -4,66 +4,72 @@
 {% block body %}
     {% if user.is_authenticated %}
 
-        <div class="container mt-3">
-            <p class="display-6" style="color: cornflowerblue">Начало</p>
-            <p class="lead">
-                На нашем сайте вы можете составлять расписание
-                тренировок.
+        <div class="container mt-3 ">
+            <p class="display-6" style="color: cornflowerblue">
+                Home
             </p>
-            <p class="lead">
-                Писать тренировочный план
+            <p class="lead bg-light p-1 shadow">
+                On our website you can make
+                a training schedule.
             </p>
-            <p class="lead">Отмечать выполнение.
-                Записывать упражнения, рабочий вес снаряда, количество подходов и повторений.
+            <p class="lead bg-light p-1 shadow">
+                Creat a training plan
             </p>
-            <p class="lead">
-                В вашем профиле будет храниться история всех тренировок. Поэтому вы
-                ничего не потеряете и не забудете.
+            <p class="lead bg-light p-1 shadow">
+                Record exercises, the working weight of the projectile, the amount of sets and times.
+            </p>
+            <p class="lead bg-light p-1 shadow">
+                Your profile will store the history of all workouts. Therefore, you
+will not lose or forget anything.
             </p>
 
 
         </div>
 
-        <div class="container text-center mt-2 mb-5">
-            <a class="btn btn-outline-primary" href="{% url 'practice_list' %}">
-                Приступить
-            </a>
+        <div class="container text-center mt-2 mb-5" style="width: 8.5em;">
+            <div class="bg-light shadow p-2 rounded border" >
+                <a class="btn btn-primary" href="{% url 'practice_list' %}">
+                Let's start
+                </a>
+            </div>
+
         </div>
 
 
     {% else %}
         <div class="container mt-3 text-center">
-            <h1 class="display-6">
-                Добро пожаловать!
+            <h1 class="display-6 border-bottom pb-1">
+                Welcome!
             </h1>
         </div>
         <div class="mt-4">
-            <p class="lead">
-                На нашем сайте вы можете составлять расписание
-                тренировок.
+            <p class="lead bg-light p-1 shadow">
+                On our website you can make
+                a training schedule.
             </p>
-            <p class="lead">
-                Писать тренировочный план
+            <p class="lead bg-light p-1 shadow">
+                Creat a training plan
             </p>
-            <p class="lead">Отмечать выполнение.
-                Записывать упражнения, рабочий вес снаряда, количество подходов и повторений.
+            <p class="lead bg-light p-1 shadow">
+                Record exercises, the working weight of the projectile, the amount of sets and times.
             </p>
-            <p class="lead">
-                В вашем профиле будет храниться история всех тренировок. Поэтому вы
-                ничего не потеряете и не забудете.
+            <p class="lead bg-light p-1 shadow">
+                Your profile will store the history of all workouts. Therefore, you
+will not lose or forget anything.
             </p>
         </div>
 
-        <div class="mt-2 text-center text-primary lead">
-            <p> Вы не вошли в аккаунт, хотите
-                <a class="" href="{% url 'signup' %}">зарегистрироваться</a>
+        <div class="mt-2 text-center text-primary">
+            <p> You have not logged in, do you want
+                <a class="" href="{% url 'signup' %}">sign up</a>
                 ?
             </p>
         </div>
         <div class="container mt-3 text-center">
-            <a class="btn btn-success btn-lg" href="{% url 'login' %}">
-                Войти
+            <a class="btn btn-success btn-lg shadow" href="{% url 'login' %}">
+                Log in
             </a>
+
 
         </div>
 
@@ -74,12 +80,13 @@
         <div class="container mt-2">
             <footer class="py-3">
                 <ul class="nav justify-content-center border-bottom border-secondary pb-1">
-                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-2 text-muted">Начало</a></li>
-                    <li class="nav-item"><a href="{% url 'practice_list' %}" class="nav-link px-2 text-muted">Мои тренировки</a></li>
+                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-2 text-muted">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'practice_list' %}" class="nav-link px-2 text-muted">My
+                        Practice</a></li>
 
                 </ul>
                 <div class="text-center">
-                    <p class="text-muted pt-1">&copy; 2022 Ковалев</p>
+                    <p class="text-muted pt-1">&copy; 2022 Kovalev</p>
 
                 </div>
 

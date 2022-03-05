@@ -4,8 +4,8 @@
 {% block body %}
 
     <div class="container mt-2 text-center mb-3">
-        <h1 class="display-6">
-            Добавить упражнение:
+        <h1 class="display-6 border-bottom pb-1">
+            Create an exercise:
         </h1>
     </div>
 
@@ -22,22 +22,22 @@
             {% csrf_token %}
             <div class="row g-4 align-items-center">
                 <div class="col-sm-5">
-                    <label for="ex" class="form-label">Название упражнения</label>
-                    <input id="ex" type="text" class="form-control" placeholder="Жим лежа" name="title">
+                    <label for="ex" class="form-label">Exercise</label>
+                    <input id="ex" type="text" class="form-control" placeholder="Squat" name="title">
                 </div>
                 <div class="col-sm-2">
-                    <label for="wg" class="form-label">Рабочий вес</label>
+                    <label for="wg" class="form-label">Weight</label>
                     <input id="wg" type="number" class="form-control" placeholder="50" name="weight_work">
                 </div>
             </div>
             <div class="row g-4 align-items-center mt-2">
                 <div class="col-sm-2">
-                    <label for="pod" class="form-label">подходов</label>
+                    <label for="pod" class="form-label">Sets</label>
                     <input id="pod" type="number" class="form-control" placeholder="4" name="podhod">
                 </div>
 
                 <div class="col-sm-2">
-                    <label for="pov" class="form-label">повторений</label>
+                    <label for="pov" class="form-label">Times</label>
                     <input id="pov" type="number" class="form-control" placeholder="12" name="povtor">
                 </div>
             </div>

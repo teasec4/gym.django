@@ -5,22 +5,22 @@
 
 
 
-    <div class="container mt-5">
+    <div class="container mt-3 mt-md-5 mt-lg-5 border bg-light shadow p-2">
         <form action="{% url 'login' %}" method="post">
             {% csrf_token %}
                 <div class="row g-3">
                     <div class="col-sm-6 mb-3">
-                        <label for="fir" class="form-label">Имя пользователя</label>
-                         <input id="fir" class="form-control" type="text" name="username" placeholder="Имя пользователя">
+                        <label for="fir" class="form-label">Username</label>
+                         <input id="fir" class="form-control" type="text" name="username" placeholder="username">
                     </div>
                     <div class="col-sm-6 mb-3">
-                        <label for="sec" class="form-label">Пароль</label>
-                        <input id="sec" class="form-control" type="password" name="password" placeholder="Пароль">
+                        <label for="sec" class="form-label">Password</label>
+                        <input id="sec" class="form-control" type="password" name="password" placeholder="password">
                     </div>
                 </div>
 
-                <button class="btn btn-success mt-3" type="submit" >
-                    Войти
+                <button class="btn btn-success mt-2" type="submit" >
+                    Log in
                 </button>
         </form>
 

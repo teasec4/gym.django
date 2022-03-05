@@ -4,45 +4,48 @@
 
 {% block body %}
     <div class="text-center">
-        <h1 class="display-6 mt-3 mb-3">Регистрация</h1>
+            <h1 class="display-6 mt-3 mb-3 border-bottom pb-2">Sign up</h1>
+        </div>
+    <div class="bg-light p-2 mb-5">
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="row g-4 align-items-center mb-2">
+                <div class="col-sm-8">
+                    <label for="l1" class="form-label fw-bold">Username</label>
+                    <input id="l1" type="text" class="form-control" placeholder="Your username" name="username">
+                </div>
+            </div>
+            <div class="row g-4 align-items-center mb-2">
+                <div class="col-sm-4">
+                    <label for="l2" class="form-label fw-bold">First Name</label>
+                    <input id="l2" type="text" class="form-control" placeholder="Your first name" name="first_name">
+                </div>
+                <div class="col-sm-4">
+                    <label for="l3" class="form-label fw-bold">Second Name</label>
+                    <input id="l3" type="text" class="form-control" placeholder="Your second name" name="last_name">
+                </div>
+            </div>
+            <div class="row g-4 align-items-center mb-2">
+                <div class="col-sm-8">
+                    <label for="l4" class="form-label fw-bold">email</label>
+                    <input id="l4" type="email" class="form-control" placeholder="Your email" name="email">
+                </div>
+            </div>
+            <div class="row g-4 align-items-center mb-2">
+                <div class="col-sm-4">
+                    <label for="l5" class="form-label fw-bold">Password</label>
+                    <input id="l5" type="password" class="form-control" placeholder="Your password" name="password1">
+                </div>
+                <div class="col-sm-4">
+                    <label for="l6" class="form-label fw-bold">Password</label>
+                    <input id="l6" type="password" class="form-control" placeholder="Your password" name="password2">
+                </div>
+            </div>
+            <button class="btn btn-warning mt-3 fw-bold" type="submit">
+                Sign up
+            </button>
+        </form>
     </div>
-    <form method="post">
-        {% csrf_token %}
-        <div class="row g-4 align-items-center mb-2">
-            <div class="col-sm-8">
-                <label for="l1" class="form-label">Имя пользователя</label>
-                <input id="l1" type="text" class="form-control" placeholder="" name="username">
-            </div>
-        </div>
-        <div class="row g-4 align-items-center mb-2">
-            <div class="col-sm-4">
-                <label for="l2" class="form-label">Имя</label>
-                <input id="l2" type="text" class="form-control" placeholder="" name="first_name">
-            </div>
-            <div class="col-sm-4">
-                <label for="l3" class="form-label">Фамилия</label>
-                <input id="l3" type="text" class="form-control" placeholder="" name="last_name">
-            </div>
-        </div>
-        <div class="row g-4 align-items-center mb-2">
-            <div class="col-sm-8">
-                <label for="l4" class="form-label">Электронная почта</label>
-                <input id="l4" type="email" class="form-control" placeholder="" name="email">
-            </div>
-        </div>
-        <div class="row g-4 align-items-center mb-2">
-            <div class="col-sm-4">
-                <label for="l5" class="form-label">Пароль</label>
-                <input id="l5" type="password" class="form-control" placeholder="" name="password1">
-            </div>
-            <div class="col-sm-4">
-                <label for="l6" class="form-label">Повторить пароль</label>
-                <input id="l6" type="password" class="form-control" placeholder="" name="password2">
-            </div>
-        </div>
-        <button class="btn btn-warning mt-3" type="submit">
-            Зарегистрироваться
-        </button>
-    </form>
 
 {% endblock %}
