@@ -29,6 +29,14 @@
 
         </form>
     </div>
+
+    {%  if message%}
+        <div class="mt-2">
+           <p class="display-6 text-danger">
+               {{ message }}
+           </p>
+        </div>
+    {% endif %}
     
 
 

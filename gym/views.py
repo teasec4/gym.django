@@ -19,10 +19,9 @@ def add_practice(request):
             practice.save()
             return redirect('practice_list')
         else:
-            # тут ошибка
-            form = AddPracticeForm()
             return render(request, 'practice_add.html', {'message': 'где-то ошибка',
-                'form' : form
+                'form' : form,
+
             })
     else:
         form = AddPracticeForm()
@@ -51,7 +50,7 @@ def add_exercises(request, p_id):
             return redirect('practice_detail', p_id)
 
         else:
-            form = AddExercisesForm(request.POST)
+
             return render(request, 'exercises_add.html', {"form": form,
                                                               "practice": practice,
                                                           'message': 'где-то ошибка',})

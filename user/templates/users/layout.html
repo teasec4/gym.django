@@ -9,7 +9,7 @@
 </head>
 <body style="background-color: #f1f0f0">
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
         <div class="container-fluid ">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -34,7 +34,7 @@
                 </ul>
                 {% if user.is_authenticated %}
                     <div>
-                        <a class="m-1 btn btn-outline-info" href="{% url 'practice_list' %}">
+                        <a class="m-1 btn btn-outline-light" href="{% url 'practice_list' %}">
                             {{ user.username }}
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-person" viewBox="0 0 16 16">
