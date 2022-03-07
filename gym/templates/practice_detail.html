@@ -4,7 +4,7 @@
 {% block body %}
     <div class="mt-1 mb-2 row g-2 align-items-center">
         <div class="col-6 text-center">
-            <p class="text-light fs-2 m-0  border  rounded p-1" style="background-color: cornflowerblue">
+            <p class="text-light bg-dark fs-2 m-0  border  rounded p-1">
                 {{ practice.title }}
             </p>
         </div>
@@ -17,26 +17,20 @@
 
     <div class="container mt-3">
         {% for exercise in exercises %}
-            <div class="row border bg-light mt-1 p-1">
+            <div class="row border bg-light mt-1 p-1 shadow" >
 
-                <div class="col-6 d-flex justify-content-start  align-items-center">
+                <div class="col-5 d-flex justify-content-start  align-items-center">
                     <p class="m-0 p-0 fs-3 fw-bold">{{ exercise.title }}</p>
                 </div>
 
 
-                <div class="col-2 d-flex justify-content-end  align-items-center">
-                    <p class="m-0 p-0 fs-5">{{ exercise.weight_work }}</p>
-                    <span class="text-primary fs-5"> kg </span>
-                </div>
+                <div class="col-5 d-flex justify-content-start  align-items-center">
+                    <p class="m-0 p-0 fs-5">{{ exercise.comment }}</p>
 
-                <div class="col-2 d-flex justify-content-center  align-items-center">
-                    <p class="m-0 p-0 fs-5">{{ exercise.podhod }}</p>
-                    <span class="text-primary">х </span>
-                    <p class="m-0 p-0 fs-5">{{ exercise.povtor }}</p>
                 </div>
 
                 {% if exercise.completed == True %}
-                    <div class="col-1 d-flex justify-content-start  align-items-center">
+                    <div class="col-2 d-flex justify-content-start  align-items-center">
                         <a class="btn" href="{% url 'exercises_incomplete' practice.id exercise.id %}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                  class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
@@ -45,7 +39,7 @@
                         </a>
                     </div>
                 {% else %}
-                    <div class="col-1  d-flex justify-content-start  align-items-center">
+                    <div class="col-2  d-flex justify-content-start  align-items-center">
                         <a class="btn" href="{% url 'exercises_complete' practice.id exercise.id %}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                  class="bi bi-check-circle text-secondary" viewBox="0 0 16 16">

@@ -9,11 +9,11 @@
         </h1>
     </div>
 
-    {%  if message%}
+    {% if message %}
         <div class="mt-2">
-           <p class="display-6 text-danger">
-               {{ message }}
-           </p>
+            <p class="display-6 text-danger">
+                {{ message }}
+            </p>
         </div>
     {% endif %}
 
@@ -23,37 +23,32 @@
             <div class="row g-4 align-items-center">
                 <div class="col-sm-5">
                     <label for="ex" class="form-label">Exercise</label>
-                    <input id="ex" type="text" class="form-control" placeholder="Squat" name="title">
+                    <input id="ex" type="text" class="form-control" placeholder="Your exercise" name="title">
                 </div>
-                <div class="col-sm-2">
-                    <label for="wg" class="form-label">Weight</label>
-                    <input id="wg" type="number" class="form-control" placeholder="50" name="weight_work">
+                <div class="col-sm-7">
+                    <label for="wg" class="form-label">Comment</label>
+                    <input id="wg" type="text" class="form-control" placeholder="Your comment" name="comment">
                 </div>
             </div>
-            <div class="row g-4 align-items-center mt-2">
-                <div class="col-sm-2">
-                    <label for="pod" class="form-label">Sets</label>
-                    <input id="pod" type="number" class="form-control" placeholder="4" name="podhod">
-                </div>
 
-                <div class="col-sm-2">
-                    <label for="pov" class="form-label">Times</label>
-                    <input id="pov" type="number" class="form-control" placeholder="12" name="povtor">
-                </div>
-            </div>
 
             <div class="mt-3 d-flex justify-content-between">
-                <button class="btn btn-success " type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
-</svg>
-                </button>
                 <a class="btn btn-danger" href="{% url 'practice_detail' practice.id %}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-  <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-</svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                        <path fill-rule="evenodd"
+                              d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                    </svg>
                 </a>
+                <button class="btn btn-success " type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-check-lg" viewBox="0 0 16 16">
+                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                    </svg>
+                </button>
+
             </div>
         </form>
     </div>

@@ -11,4 +11,4 @@ class AddPracticeForm(forms.ModelForm):
 class AddExercisesForm(forms.ModelForm):
     class Meta:
         model = Exercises
-        fields = ['title', 'podhod', 'povtor', 'weight_work', 'es','md','hd']
+        fields = ['title', 'comment']
